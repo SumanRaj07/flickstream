@@ -1,2 +1,333 @@
 # flickstream
 webpage to upload and see videos online made using html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlickStream - Upload & Share Videos</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+        .video-card:hover {
+            transform: scale(1.03);
+            transition: all 0.3s ease;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <!-- Navigation -->
+    <nav class="gradient-bg text-white shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i data-feather="film" class="w-6 h-6"></i>
+                <a href="#" class="text-xl font-bold">FlickStream</a>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#" class="hover:text-blue-200">Home</a>
+                <a href="#" class="hover:text-blue-200">Trending</a>
+                <a href="#" class="hover:text-blue-200">Categories</a>
+                <a href="#" class="hover:text-blue-200">Upload</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="relative">
+                    <input type="text" placeholder="Search videos..." class="px-4 py-1 rounded-full text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-300">
+                    <button class="absolute right-2 top-1/2 transform -translate-y-1/2">
+                        <i data-feather="search" class="text-gray-500"></i>
+                    </button>
+                </div>
+                <button class="bg-blue-500 hover:bg-blue-600 px-4 py-1 rounded-full text-sm font-medium">Sign In</button>
+                <button class="md:hidden">
+                    <i data-feather="menu"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="gradient-bg text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Upload & Share Your Videos</h1>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Join thousands of creators sharing their content on FlickStream</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <button class="bg-white text-blue-600 px-6 py-3 rounded-full font-bold hover:bg-gray-100 transition">
+                    <i data-feather="upload" class="inline mr-2"></i> Upload Video
+                </button>
+                <button class="border-2 border-white text-white px-6 py-3 rounded-full font-bold hover:bg-white hover:text-blue-600 transition">
+                    <i data-feather="play" class="inline mr-2"></i> Watch Now
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8">
+        <!-- Trending Section -->
+        <div class="mb-12">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold">Trending Videos</h2>
+                <a href="#" class="text-blue-600 hover:underline">View All</a>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Video Card 1 -->
+                <div class="video-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="relative">
+                        <img src="http://static.photos/technology/640x360/1" alt="Video thumbnail" class="w-full h-48 object-cover">
+                        <div class="absolute bottom-2 right-2 bg-black bg-opacity-70 text-white px-2 py-1 rounded text-xs">
+                            12:34
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex mb-2">
+                            <img src="http://static.photos/people/200x200/1" alt="Creator" class="w-10 h-10 rounded-full mr-3">
+                            <div>
+                                <h3 class="font-semibold line-clamp-2">Amazing Tech Gadgets You Need in 2023</h3>
+                                <p class="text-gray-600 text-sm">TechReviews</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span><i data-feather="eye" class="inline mr-1 w-3 h-3"></i> 45K views</span>
+                            <span><i data-feather="thumbs-up" class="inline mr-1 w-3 h-3"></i> 2.1K</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Card 2 -->
+                <div class="video-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="relative">
+                        <img src="http://static.photos/travel/640x360/2" alt="Video thumbnail" class="w-full h-48 object-cover">
+                        <div class="absolute bottom-2 right-2 bg-black bg-opacity-70 text-white px-2 py-1 rounded text-xs">
+                            8:45
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex mb-2">
+                            <img src="http://static.photos/people/200x200/2" alt="Creator" class="w-10 h-10 rounded-full mr-3">
+                            <div>
+                                <h3 class="font-semibold line-clamp-2">Bali Travel Guide - Best Places to Visit</h3>
+                                <p class="text-gray-600 text-sm">TravelWithMe</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span><i data-feather="eye" class="inline mr-1 w-3 h-3"></i> 87K views</span>
+                            <span><i data-feather="thumbs-up" class="inline mr-1 w-3 h-3"></i> 4.3K</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Card 3 -->
+                <div class="video-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="relative">
+                        <img src="http://static.photos/food/640x360/3" alt="Video thumbnail" class="w-full h-48 object-cover">
+                        <div class="absolute bottom-2 right-2 bg-black bg-opacity-70 text-white px-2 py-1 rounded text-xs">
+                            15:20
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex mb-2">
+                            <img src="http://static.photos/people/200x200/3" alt="Creator" class="w-10 h-10 rounded-full mr-3">
+                            <div>
+                                <h3 class="font-semibold line-clamp-2">5 Easy Dinner Recipes for Beginners</h3>
+                                <p class="text-gray-600 text-sm">CookingMaster</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span><i data-feather="eye" class="inline mr-1 w-3 h-3"></i> 32K views</span>
+                            <span><i data-feather="thumbs-up" class="inline mr-1 w-3 h-3"></i> 1.7K</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Card 4 -->
+                <div class="video-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="relative">
+                        <img src="http://static.photos/gaming/640x360/4" alt="Video thumbnail" class="w-full h-48 object-cover">
+                        <div class="absolute bottom-2 right-2 bg-black bg-opacity-70 text-white px-2 py-1 rounded text-xs">
+                            22:15
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex mb-2">
+                            <img src="http://static.photos/people/200x200/4" alt="Creator" class="w-10 h-10 rounded-full mr-3">
+                            <div>
+                                <h3 class="font-semibold line-clamp-2">Gaming on the New PS5 - First Impressions</h3>
+                                <p class="text-gray-600 text-sm">GameZone</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span><i data-feather="eye" class="inline mr-1 w-3 h-3"></i> 120K views</span>
+                            <span><i data-feather="thumbs-up" class="inline mr-1 w-3 h-3"></i> 8.9K</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Categories Section -->
+        <div class="mb-12">
+            <h2 class="text-2xl font-bold mb-6">Browse Categories</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <a href="#" class="category-card bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition text-center">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-2">
+                        <i data-feather="film" class="text-blue-600"></i>
+                    </div>
+                    <span class="font-medium">Movies</span>
+                </a>
+                <a href="#" class="category-card bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition text-center">
+                    <div class="bg-red-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-2">
+                        <i data-feather="music" class="text-red-600"></i>
+                    </div>
+                    <span class="font-medium">Music</span>
+                </a>
+                <a href="#" class="category-card bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition text-center">
+                    <div class="bg-green-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-2">
+                        <i data-feather="trending-up" class="text-green-600"></i>
+                    </div>
+                    <span class="font-medium">Trending</span>
+                </a>
+                <a href="#" class="category-card bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition text-center">
+                    <div class="bg-yellow-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-2">
+                        <i data-feather="gamepad" class="text-yellow-600"></i>
+                    </div>
+                    <span class="font-medium">Gaming</span>
+                </a>
+                <a href="#" class="category-card bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition text-center">
+                    <div class="bg-purple-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-2">
+                        <i data-feather="book" class="text-purple-600"></i>
+                    </div>
+                    <span class="font-medium">Education</span>
+                </a>
+                <a href="#" class="category-card bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition text-center">
+                    <div class="bg-pink-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-2">
+                        <i data-feather="heart" class="text-pink-600"></i>
+                    </div>
+                    <span class="font-medium">Lifestyle</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Upload Section -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-12">
+            <h2 class="text-2xl font-bold mb-4">Upload Your Video</h2>
+            <div class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center">
+                <i data-feather="upload-cloud" class="w-12 h-12 mx-auto text-blue-500 mb-4"></i>
+                <h3 class="text-lg font-medium mb-2">Drag and drop video files to upload</h3>
+                <p class="text-gray-600 mb-4">Your videos will be private until you publish them</p>
+                <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-medium">
+                    Select Files
+                </button>
+                <p class="text-xs text-gray-500 mt-4">MP4, WebM or AVI. Max 2GB</p>
+            </div>
+            <div class="mt-6">
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-medium mb-2">Video Title</label>
+                    <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-medium mb-2">Description</label>
+                    <textarea class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300 h-32"></textarea>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-medium mb-2">Thumbnail</label>
+                    <div class="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center">
+                        <i data-feather="image" class="w-8 h-8 mx-auto text-gray-400 mb-2"></i>
+                        <p class="text-gray-600 text-sm mb-2">Upload a thumbnail or we'll choose one for you</p>
+                        <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-1 rounded-full text-sm font-medium">
+                            Select Image
+                        </button>
+                    </div>
+                </div>
+                <div class="flex justify-end">
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-medium">
+                        Publish Video
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">FlickStream</h3>
+                    <p class="text-gray-400">The best platform for sharing your videos with the world.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Navigation</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Trending</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Categories</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Upload</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Copyright</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">DMCA</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Connect With Us</h4>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="youtube"></i></a>
+                    </div>
+                    <p class="text-gray-400">Subscribe to our newsletter</p>
+                    <div class="flex mt-2">
+                        <input type="email" placeholder="Your email" class="px-3 py-2 rounded-l text-gray-800 focus:outline-none">
+                        <button class="bg-blue-600 hover:bg-blue-700 px-3 py-2 rounded-r">
+                            <i data-feather="send"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2023 FlickStream. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        feather.replace();
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate elements on scroll
+            const animateOnScroll = function() {
+                const elements = document.querySelectorAll('.video-card, .category-card');
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.3;
+                    
+                    if(elementPosition < screenPosition) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+
+            // Set initial state for animation
+            const elements = document.querySelectorAll('.video-card, .category-card');
+            elements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'all 0.5s ease';
+            });
+
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll(); // Run once on load
+        });
+    </script>
+</body>
+</html>
